@@ -1,0 +1,26 @@
+---
+- name: Install and configure Apache with a PHP web site
+  hosts: all
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+
+    - name: Install Apache PHP dependencies
+      apt:
+        name:
+          - php
+          - libapache2-mod-php
+
+    - name: Remove index.html
+      file:
+        name: /var/www/html/index.html
+        state: absent
+
+    - name: Put website in place
+      unarchive:
+        src: website.tar.gz
+        dest: /var/www/html/
+        owner: www-data
+        group: www-data
+        mode: 0644

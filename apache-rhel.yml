@@ -1,0 +1,31 @@
+---
+- name: Install and configure Apache with a PHP web site
+  hosts: all
+  tasks:
+    - name: Install Apache
+      dnf:
+        name: httpd
+
+    - name: Install Apache PHP dependencies
+      dnf:
+        name:
+          - php
+
+    - name: Remove index.html
+      file:
+        name: /var/www/html/index.html
+        state: absent
+
+    - name: Put website in place
+      unarchive:
+        src: website.tar.gz
+        dest: /var/www/html/
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Enable the Apache service
+      service:
+        name: httpd
+        state: started
+        enabled: true
