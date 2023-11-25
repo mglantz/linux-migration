@@ -14,41 +14,41 @@ Demo of migration between Linux operating systems, which migrates a simple php b
 ```
 git clone https://github.com/mglantz/linux-migration
 ```
-
-2. Setup Ansible inventory(ies) for your systems
-3. Run the first playbook, against Ubuntu:
+2. Functing playbooks can be found in linux-migration/playbooks
+3. Setup Ansible inventory(ies) for your systems
+4. Run the first playbook, against Ubuntu:
 ```
 cd linux-migration
 cp playbooks/apache-ubuntu.yml .
 ansible-playbook -i ubuntu-inventory apache-ubuntu.yml
 ```
-4. Access website on your Ubuntu Linux server
-5. Run the second playbook, against OpenSUSE
+5. Access website on your Ubuntu Linux server
+6. Run the second playbook, against OpenSUSE
 ```
 cp apache-ubuntu.yml apache-suse.yml
 ansible-playbook -i suse-inventory apache-suse.yml
 ```
-6. Correct and explain the issues in the playbook
+7. Correct and explain the issues in the playbook
 * Package manager change from apt to zypper
 * Apache PHP dependency change from libapache2-mod-php to apache2-mod_php8
 * unarchieve settings change from /var/www/html/ to /srv/www/htdocs/
 * unarchieve settings change from owner/group www-data to root
 * Adding tasks to start the apache2 service
-7. Run the third playbook, against Red Hat Enterprise Linux
+8. Run the third playbook, against Red Hat Enterprise Linux
 ```
 cp apache-suse.yml apache-rhel.yml
 ansible-playbook -i rhel-inventory apache-rhel.yml
 ```
-8. Correct and explain the issues in the playbook
+9. Correct and explain the issues in the playbook
 * Package manager change from zypper to dnf
 * Apache package and service name change from apache2 to httpd
 * Remove the Apache PHP dependency apache2-mod_php8
-9. Run the fourth playbook, against Oracle Linux
+10. Run the fourth playbook, against Oracle Linux
 ```
 cp apache-rhel.yml apache-ol.yml
 ansible-playbook -i ol-inventory apache-ol.yml
 ```
-10. Correct and explain the issues in the playbook
+11. Correct and explain the issues in the playbook
 * Add task to install package: tar
 * Add task to open up a firewall opening for firewalld
 
