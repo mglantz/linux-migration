@@ -14,7 +14,7 @@ Demo of migration between Linux operating systems, which migrates a simple php b
 ```
 git clone https://github.com/mglantz/linux-migration
 ```
-2. Functing playbooks can be found in [linux-migration/playbooks](https://github.com/mglantz/linux-migration/tree/main/playbooks)
+2. Functioning playbooks can be found in [linux-migration/playbooks](https://github.com/mglantz/linux-migration/tree/main/playbooks)
 3. Setup Ansible inventory(ies) for your systems
 4. Run the first playbook, against Ubuntu:
 ```
