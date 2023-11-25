@@ -56,4 +56,5 @@ ansible-playbook -i ol-inventory apache-ol.yml
 11. Correct and explain the issues in the playbook
 * Add task to install package: tar
 * Add task to open up a firewall opening for firewalld
+* Optional: Package manager change from dnf to package :)
 
