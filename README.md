@@ -9,7 +9,7 @@ Differences demonstrated:
 * Different baseline and configuration of Linux OS
 
 ## Setup Linux distros
-* Red Hat Enterprise Linux (Login required, Red Hat Enterprise Linux 9.2 KVM Guest Image): https://access.redhat.com/downloads/content/479/ver=/rhel---9/9.2/x86_64/product-software
+* Red Hat Enterprise Linux (Login required, Red Hat Enterprise Linux 9.3 KVM Guest Image): https://access.redhat.com/downloads/content/479/ver=/rhel---9/9.3/x86_64/product-software
 * OpenSUSE: https://download.opensuse.org/repositories/Cloud:/Images:/Leap_15.5/images/openSUSE-Leap-15.5.x86_64-NoCloud.qcow2
 * Ubuntu: https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img
 * Oracle Linux: https://yum.oracle.com/templates/OracleLinux/OL9/u2/x86_64/OL9U2_x86_64-kvm-b197.qcow
