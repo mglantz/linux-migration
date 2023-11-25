@@ -3,6 +3,11 @@ Demo of migration between Linux operating systems, which migrates a simple php b
 * A demonstration of the differences that you find betweeen different Linux distributions.
 * A demonstration of how Ansible can ease the migration between different Linux distributions.
 
+Differences demonstrated:
+* Different package names
+* Different configuration of the same software
+* Different baseline and configuration of Linux OS
+
 ## Setup Linux distros
 * Red Hat Enterprise Linux (Login required, Red Hat Enterprise Linux 9.2 KVM Guest Image): https://access.redhat.com/downloads/content/479/ver=/rhel---9/9.2/x86_64/product-software
 * OpenSUSE: https://download.opensuse.org/repositories/Cloud:/Images:/Leap_15.5/images/openSUSE-Leap-15.5.x86_64-NoCloud.qcow2
