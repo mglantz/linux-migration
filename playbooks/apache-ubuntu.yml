@@ -3,22 +3,22 @@
   hosts: all
   tasks:
     - name: Install Apache
-      apt:
+      ansible.builtin.apt:
         name: apache2
 
     - name: Install Apache PHP dependencies
-      apt:
+      ansible.builtin.apt:
         name:
           - php
           - libapache2-mod-php
 
     - name: Remove index.html
-      file:
+      ansible.builtin.file:
         name: /var/www/html/index.html
         state: absent
 
     - name: Put website in place
-      unarchive:
+      ansible.builtin.unarchive:
         src: website.tar.gz
         dest: /var/www/html/
         owner: www-data

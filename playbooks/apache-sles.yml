@@ -3,22 +3,22 @@
   hosts: all
   tasks:
     - name: Install Apache
-      zypper:
+      ansible.builtin.zypper:
         name: apache2
 
     - name: Install Apache PHP dependencies
-      zypper:
+      ansible.builtin.zypper:
         name:
           - php
           - apache2-mod_php8
 
     - name: Remove index.html
-      file:
+      ansible.builtin.file:
         name: /var/www/html/index.html
         state: absent
 
     - name: Put website in place
-      unarchive:
+      ansible.builtin.unarchive:
         src: website.tar.gz
         dest: /srv/www/htdocs/
         owner: root
@@ -26,7 +26,7 @@
         mode: 0644
 
     - name: Enable the Apache service
-      service:
+      ansible.builtin.service:
         name: apache2
         state: started
         enabled: true

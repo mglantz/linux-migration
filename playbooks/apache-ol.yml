@@ -3,25 +3,25 @@
   hosts: all
   tasks:
     - name: Install Apache
-      dnf:
+      ansible.builtin.dnf:
         name: httpd
 
     - name: Install Apache PHP dependencies
-      dnf:
+      ansible.builtin.dnf:
         name:
           - php
 
     - name: Remove index.html
-      file:
+      ansible.builtin.file:
         name: /var/www/html/index.html
         state: absent
 
     - name: Install tar
-      dnf:
+      ansible.builtin.dnf:
         name: tar
 
     - name: Put website in place
-      unarchive:
+      ansible.builtin.unarchive:
         src: website.tar.gz
         dest: /var/www/html/
         owner: root
@@ -29,13 +29,13 @@
         mode: 0644
 
     - name: Enable the Apache service
-      service:
+      ansible.builtin.service:
         name: httpd
         state: started
         enabled: true
 
     - name: Open up firewall
-      firewalld:
+      ansible.builtin.firewalld:
         service: http
         state: enabled
         permanent: true
